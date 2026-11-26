@@ -229,6 +229,9 @@ header {
             "left"
             "down";
         grid-template-rows: auto auto auto;
+        #rightBar { grid-row: 1; grid-column: 1; }
+        #leftBar { grid-row: 2; grid-column: 1; }
+        #downBar { grid-row: 3; grid-column: 1; }
         gap: 12px;
         width: min(480px, calc(100vw - 24px));
         max-height: calc(100vh - 90px);
@@ -315,8 +318,19 @@ html.mobile-device #mainLabel {
     top: 55%;
 }
 
+html.mobile-device #rightBar { grid-row: 1; grid-column: 1; }
+html.mobile-device #leftBar { grid-row: 2; grid-column: 1; }
+html.mobile-device #downBar { grid-row: 3; grid-column: 1; }
+
 html.mobile-device #rightBar,
 html.mobile-device #leftBar,
 html.mobile-device #downBar {
     width: 100%;
 }
+
+
+/* Корректировка вертикального положения подписи на телефонах */
+@media (max-width: 700px) {
+    #aka { bottom: 13px !important; }
+}
+html.mobile-device #aka { bottom: 13px !important; }
