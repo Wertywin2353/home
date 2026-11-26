@@ -61,6 +61,7 @@
 }
 
 body {
+    overflow: hidden;
     background-color: black;
     color: aliceblue;
     font-family: 'Segoe UI';
