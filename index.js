@@ -78,7 +78,7 @@ window.onload = async function () {
 }
 
 async function showMainLabel() {
-    document.getElementById('mainLabel').style.scale = '1';
+    document.getElementById('mainLabel').style.scale = '0.9';
     document.getElementById('mainLabel').style.opacity = '100%';
     document.getElementById('mainLabel').style.borderRadius = '15px';
     await delay(500);
