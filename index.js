@@ -102,7 +102,7 @@ async function loadLeftBar() {
     document.getElementById('leftBar').style.opacity = "100%";
     await delay(250);
     document.getElementById('aka').style.opacity = "50%";
-    document.getElementById('aka').style.bottom = "26px";
+    document.getElementById('aka').style.bottom = isMobileDevice() ? "13px" : "26px";
     await delay(250);
     document.getElementById('ageOmeter').innerHTML = "+--";
     await delay(100);
