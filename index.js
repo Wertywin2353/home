@@ -1,3 +1,12 @@
+// Определение телефона по User-Agent.
+// CSS также содержит media queries как запасной вариант для узких окон.
+function isMobileDevice() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera || "";
+    return /iPhone|iPod|Android.*Mobile|Windows Phone|webOS|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua);
+}
+
+document.documentElement.classList.toggle("mobile-device", isMobileDevice());
+
 let delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let loadinText = [
     'Готовлюсь...',
@@ -72,17 +81,15 @@ window.onload = async function () {
     document.getElementById('headerLogo').innerHTML = "WERTYWIN2353.PRO <span style='opacity: 50%; font-weight: normal;'>/ ...</span>";
     await delay(250);
     document.getElementById('headerLogo').innerHTML = "WERTYWIN2353.PRO <span style='opacity: 50%; font-weight: normal;'>/ Визитка</span>";
-    
-
-
 }
 
 async function showMainLabel() {
     document.getElementById('mainLabel').style.scale = '0.9';
     document.getElementById('mainLabel').style.opacity = '100%';
     document.getElementById('mainLabel').style.borderRadius = '15px';
+
+    // Позиционирование внутренних панелей теперь полностью контролируется CSS Grid.
     await delay(500);
-    document.getElementById('rightBar').style.translate = '105px';
     document.getElementById('rightBar').style.background = "black";
     document.getElementById('rightBar').style.borderRadius = "15px";
     await delay(250);
@@ -138,12 +145,11 @@ async function loadLeftBar() {
 
 async function loadDevices() {
 }
-async function  loadDesc() {
-    //downBar
+
+async function loadDesc() {
     document.getElementById('downBar').style.background = "black";
     document.getElementById('downBar').style.borderRadius = "15px";
     document.getElementById('downBar').style.opacity = "100%";
-    document.getElementById('downBar').style.translate = "-50% 0";
     await delay(250);
     makeItGlass();
 }
