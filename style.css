@@ -101,6 +101,7 @@ header {
     grid-template-areas:
         "left right"
         "down down";
+    grid-template-rows: auto auto;
     align-items: stretch;
     justify-content: center;
     gap: 16px;
@@ -117,6 +118,8 @@ header {
 
 #rightBar {
     grid-area: right;
+    grid-row: 1;
+    align-self: stretch;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 10px;
@@ -143,6 +146,8 @@ header {
 
 #leftBar {
     grid-area: left;
+    grid-row: 1;
+    align-self: stretch;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     opacity: 0;
@@ -186,6 +191,9 @@ header {
 
 #downBar {
     grid-area: down;
+    grid-row: 2;
+    grid-column: 1 / -1;
+    align-self: start;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     opacity: 0;
@@ -220,6 +228,7 @@ header {
             "right"
             "left"
             "down";
+        grid-template-rows: auto auto auto;
         gap: 12px;
         width: min(480px, calc(100vw - 24px));
         max-height: calc(100vh - 90px);
@@ -298,6 +307,7 @@ html.mobile-device #mainLabel {
         "right"
         "left"
         "down";
+    grid-template-rows: auto auto auto;
     width: min(480px, calc(100vw - 24px));
     max-height: calc(100vh - 90px);
     max-height: calc(100dvh - 90px);
