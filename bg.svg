@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <title>Nothing-inspired animated dot-matrix background</title>
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171717"/>
+      <stop offset=".52" stop-color="#090909"/>
+      <stop offset="1" stop-color="#1b1b1b"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.15" fill="#fff" opacity=".16"/>
+    </pattern>
+    <pattern id="fineDots" width="13" height="13" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r=".8" fill="#fff" opacity=".12"/>
+    </pattern>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".17"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity=".035"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".09"/>
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="b"/>
+      <feOffset dy="12" result="o"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".45"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="screen">
+      <rect x="0" y="0" width="1600" height="900"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#screen)">
+    <rect width="1600" height="900" fill="url(#base)"/>
+    <rect width="1600" height="900" fill="url(#dots)"/>
+    <rect width="1600" height="900" fill="url(#fineDots)" opacity=".42"/>
+
+    <!-- Subtle technical grid -->
+    <g stroke="#fff" stroke-opacity=".075" stroke-width="1">
+      <path d="M0 150H1600 M0 450H1600 M0 750H1600"/>
+      <path d="M200 0V900 M800 0V900 M1400 0V900"/>
+    </g>
+
+    <!-- Oversized glyph-like circular modules -->
+    <g fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" opacity=".92" filter="url(#softShadow)">
+      <g transform="translate(300 290)">
+        <circle r="126" stroke-dasharray="565 226" transform="rotate(-38)"/>
+        <circle r="92" stroke-opacity=".26" stroke-width="3" stroke-dasharray="3 12"/>
+        <path d="M0 -126V-94" stroke="#ff3d00" stroke-width="20"/>
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="70s" repeatCount="indefinite"/>
+      </g>
+      <g transform="translate(1280 600)">
+        <circle r="118" stroke-dasharray="470 272" transform="rotate(18)"/>
+        <circle r="82" stroke-opacity=".25" stroke-width="3" stroke-dasharray="3 12"/>
+        <path d="M0 118V88" stroke="#ff3d00" stroke-width="20"/>
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0;-360 0 0" dur="82s" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- Glyph-style segmented light bars -->
+    <g filter="url(#glow)">
+      <g transform="translate(800 230)">
+        <rect x="-7" y="-105" width="14" height="210" rx="7" fill="#fff" opacity=".9"/>
+        <rect x="-7" y="-105" width="14" height="55" rx="7" fill="#ff3d00">
+          <animate attributeName="y" values="-105;50;-105" dur="5s" repeatCount="indefinite"/>
+        </rect>
+        <circle r="4" fill="#fff"/>
+      </g>
+      <g transform="translate(800 670) rotate(90)">
+        <rect x="-6" y="-145" width="12" height="290" rx="6" fill="#fff" opacity=".72"/>
+        <rect x="-6" y="-145" width="12" height="68" rx="6" fill="#ff3d00">
+          <animate attributeName="y" values="-145;77;-145" dur="6s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </g>
+
+    <!-- Floating transparent technical panels -->
+    <g filter="url(#softShadow)">
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;0 -15;0 0" dur="11s" repeatCount="indefinite"/>
+        <rect x="90" y="600" width="260" height="150" rx="22" fill="url(#glass)" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>
+        <rect x="112" y="622" width="216" height="106" rx="12" fill="url(#dots)" opacity=".9"/>
+        <path d="M125 700H190V682H240" fill="none" stroke="#ff3d00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="240" cy="682" r="7" fill="#ff3d00"/>
+        <path d="M125 646H205 M125 660H175" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+      </g>
+
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0 0;12 10;0 0" dur="14s" repeatCount="indefinite"/>
+        <rect x="1110" y="150" width="360" height="190" rx="24" fill="url(#glass)" stroke="#fff" stroke-opacity=".32" stroke-width="2"/>
+        <g fill="#fff" opacity=".82">
+          <circle cx="1140" cy="180" r="5"/><circle cx="1160" cy="180" r="5"/><circle cx="1180" cy="180" r="5"/>
+          <circle cx="1140" cy="200" r="5"/><circle cx="1160" cy="200" r="5"/><circle cx="1180" cy="200" r="5"/>
+        </g>
+        <path d="M1220 188H1435" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+        <path d="M1140 260H1200L1220 238H1285L1305 280H1380" fill="none" stroke="#ff3d00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="1380" cy="280" r="8" fill="#ff3d00"/>
+        <path d="M1140 305H1250 M1270 305H1330" stroke="#fff" stroke-opacity=".4" stroke-width="3" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Signal / status indicators -->
+    <g transform="translate(510 710)">
+      <g fill="#fff">
+        <circle cx="0" cy="0" r="5"/><circle cx="22" cy="0" r="5"/><circle cx="44" cy="0" r="5"/>
+        <circle cx="0" cy="22" r="5"/><circle cx="22" cy="22" r="5"/><circle cx="44" cy="22" r="5"/>
+        <circle cx="0" cy="44" r="5"/><circle cx="22" cy="44" r="5"/><circle cx="44" cy="44" r="5"/>
+      </g>
+      <circle cx="44" cy="44" r="5" fill="#ff3d00">
+        <animate attributeName="opacity" values="1;.25;1" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <g transform="translate(1040 440)" fill="none" stroke-width="5">
+      <path d="M-58 0H-20 M20 0H58 M0 -58V-20 M0 20V58" stroke="#fff" stroke-opacity=".65"/>
+      <circle r="15" stroke="#ff3d00"/>
+      <circle r="4" fill="#ff3d00" stroke="none"/>
+      <circle r="70" stroke="#fff" stroke-opacity=".16" stroke-dasharray="2 12">
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="24s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Corner registration marks -->
+    <g fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2">
+      <path d="M48 82V48H82 M1518 48H1552V82 M48 818V852H82 M1518 852H1552V818"/>
+      <path d="M48 450H88 M1512 450H1552 M800 48V82 M800 818V852"/>
+    </g>
+
+    <!-- Sparse orange signal pulses -->
+    <g fill="#ff3d00" filter="url(#glow)">
+      <circle cx="470" cy="180" r="5"><animate attributeName="r" values="4;9;4" dur="3s" repeatCount="indefinite"/></circle>
+      <circle cx="970" cy="790" r="5"><animate attributeName="r" values="4;8;4" dur="2.6s" repeatCount="indefinite"/></circle>
+      <circle cx="1510" cy="390" r="4"><animate attributeName="opacity" values=".25;1;.25" dur="2s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <rect x="1" y="1" width="1598" height="898" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="2"/>
+  </g>
+</svg>
